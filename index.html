@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Morgan Curtis Properties is a Manchester-based property investment company investing in properties in the North West of England.">
+<link rel="icon" href="images/logo.png">
+<title>Morgan Curtis Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#282c4b;          /* brand accent from current site */
+    --gold:#8f7a4b;          /* brand light accent */
+    --charcoal:#2a2829;
+    --text:#494949;
+    --stone:#f6f3ee;
+    --line:#e4ddd1;
+    --white:#ffffff;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Poppins,system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.6;font-size:17px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Manrope,system-ui,sans-serif;color:var(--navy);font-weight:500;line-height:1.1;letter-spacing:-0.02em}
+  h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:20px}
+  h3{font-size:1.15rem;font-weight:600;margin-bottom:8px}
+  p+p{margin-top:14px}
+  .eyebrow{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+  section{padding:88px 0}
+  .btn{display:inline-block;padding:13px 30px;border-radius:300px;background:var(--charcoal);color:var(--white);text-decoration:none;font-weight:400;font-size:1rem;transition:background .2s}
+  .btn:hover{background:var(--navy)}
+  .btn.ghost{background:transparent;border:1.5px solid var(--white)}
+  .btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:2px solid var(--gold)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .nav img{height:54px;width:auto}
+  .nav ul{display:flex;gap:28px;list-style:none;font-size:.9rem;font-weight:400}
+  .nav ul a{text-decoration:none;color:var(--charcoal)}
+  .nav ul a:hover{color:var(--gold)}
+  @media(max-width:760px){.nav ul{display:none}}
+
+  /* hero */
+  .hero{position:relative;color:var(--white);padding:0;min-height:560px;display:flex;align-items:center;
+    background:linear-gradient(90deg,rgba(40,44,75,.88) 0%,rgba(40,44,75,.55) 55%,rgba(40,44,75,.15) 100%),
+    url("images/hero.jpg") center 60%/cover}
+  @media(max-width:760px){.hero{background-position:16% center;min-height:520px}}
+  .hero .wrap{width:100%;padding-top:90px;padding-bottom:90px}
+  .hero h1{color:var(--white);font-size:clamp(2.1rem,5vw,3.3rem);max-width:640px;margin-bottom:18px}
+  .hero p{max-width:540px;font-size:1.1rem;opacity:.92;margin-bottom:32px}
+
+  /* intro */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:36px}}
+  .about{align-items:center}
+  .quote{background:var(--stone);border-left:3px solid var(--gold);padding:26px 30px;margin-top:28px}
+  .founder{max-width:430px;margin-left:auto;position:relative;isolation:isolate}
+  .founder img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+  .founder::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--gold);z-index:-1}
+  .founder figcaption{background:var(--navy);color:#fff;padding:14px 20px;font-weight:600;font-size:.95rem}
+  .founder figcaption span{display:block;color:#c9b68a;font-weight:500;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+  @media(max-width:860px){.founder{margin:0 auto}}
+  .about-intro{max-width:720px}
+  .about-row{margin-top:56px}
+  .about-row .founder{margin-left:0}
+  #about{padding-bottom:64px}
+  .contact .contact-pp{margin-top:40px;font-size:.95rem}
+  .contact-pp a{color:#c9b68a;font-weight:600;white-space:nowrap}
+  @media(max-width:860px){.about-row .founder{margin:0 auto}}
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .feature+.feature{margin-top:80px}
+  .feature img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .feature.flip .img{order:2}
+  @media(max-width:860px){.feature{grid-template-columns:1fr;gap:28px}.feature.flip .img{order:0}}
+  .nav .pp{border:1.5px solid var(--gold);border-radius:300px;padding:6px 16px;color:var(--gold)}
+  .quote p{font-size:1.2rem;color:var(--navy);line-height:1.6}
+  .quote cite{display:block;margin-top:18px;font-style:normal;font-size:.9rem;color:var(--gold);font-weight:600}
+
+  /* homes */
+  .homes{background:var(--stone)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:36px}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--white);overflow:hidden}
+  .card img{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--line)}
+  .card div{padding:20px 22px 24px}
+  .card p{font-size:.95rem}
+
+  /* landlords */
+  .panel{background:var(--navy);color:#e9e9ef}
+  .panel h2,.panel h3{color:var(--white)}
+  .panel .eyebrow{color:#c9b68a}
+  .points{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:40px 0 36px}
+  @media(max-width:860px){.points{grid-template-columns:1fr}}
+  .points>div{font-size:.96rem}
+  .points img{width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:18px;border-bottom:3px solid #c9b68a}
+
+  /* process */
+  .process{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+  .process>img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  @media(max-width:900px){.process{grid-template-columns:1fr;gap:32px}.process>img{aspect-ratio:16/9}}
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin-top:28px;counter-reset:s}
+  @media(max-width:560px){.steps{grid-template-columns:1fr}}
+  .steps div{border-top:2px solid var(--gold);padding-top:18px;font-size:.96rem}
+  .steps div::before{counter-increment:s;content:"0" counter(s);display:block;color:var(--gold);font-weight:700;margin-bottom:6px}
+
+  /* testimonials */
+  .testimonials{background:var(--stone)}
+  .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:30px}
+  @media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+  .tgrid blockquote{background:var(--white);padding:30px;font-size:1.02rem;color:var(--navy)}
+  .tgrid cite{display:block;margin-top:14px;font-style:normal;font-size:.88rem;color:var(--gold);font-weight:600}
+  .todo{border:1.5px dashed var(--gold);background:#fffaf0;color:var(--text);font-size:.92rem}
+
+  /* contact */
+  .contact{text-align:center;color:#ececf2;background:linear-gradient(rgba(40,44,75,.86),rgba(40,44,75,.86)),url("images/contact-norwood-kitchen.jpg") center 40%/cover fixed}
+  @supports (-webkit-touch-callout:none){.contact{background-attachment:scroll}}
+  @media(max-width:860px){.contact{background-attachment:scroll}}
+  .contact h2{color:#fff}.contact .eyebrow{color:#c9b68a}
+  .contact .btn{background:#fff;color:var(--navy)}.contact .btn:hover{background:#c9b68a;color:#fff}
+  .contact p{max-width:640px;margin-left:auto;margin-right:auto}
+  .contact .btn{margin-top:28px}
+
+  footer{background:var(--charcoal);color:#bdbbbc;font-size:.85rem;padding:44px 0}
+  footer .row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer a{color:#e7e2d8}
+  .social{display:flex;gap:18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="images/logo.png" alt="Morgan Curtis Properties"></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#homes">Our homes</a></li>
+      <li><a href="#selling">Selling to us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#d8c79f">Morgan Curtis Properties</span>
+    <h1>Property investment, done properly.</h1>
+    <p>Morgan Curtis Properties is a Manchester-based property investment company. We invest in properties in the North West of England for a strong rental return, and we buy directly from individuals and landlords who are ready to sell.</p>
+    <a class="btn ghost" href="#selling">Thinking of selling?</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-intro">
+      <span class="eyebrow">Who we are</span>
+      <h2>A long-term approach to property investment</h2>
+      <p>Morgan Curtis Properties was founded by Anna Wren in 2017. The business invests in properties in the North West of England for a strong rental return.</p>
+      <blockquote class="quote">
+        <p>&ldquo;We invest in well-located homes, let them to good tenants and hold them for the long term. Good homes and good tenants are what keep a portfolio performing year after year.&rdquo;</p>
+        <cite>Anna Wren, Founder, Morgan Curtis Properties</cite>
+      </blockquote>
+    </div>
+    <div class="about-row">
+      <figure class="founder">
+        <img src="images/anna-wren.jpg" alt="Anna Wren, Founder of Morgan Curtis Properties">
+        <figcaption>Anna Wren<span>Founder, Morgan Curtis Properties</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="homes" id="homes">
+  <div class="wrap">
+    <span class="eyebrow">Our portfolio</span>
+    <h2>A selection of our portfolio properties</h2>
+    <p style="max-width:640px">Each of these homes is fully let and managed as part of our long-term portfolio.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="images/mauldeth.jpg" alt="Mauldeth" loading="lazy">
+        <div><h3>Mauldeth</h3><p>A well-laid-out six-bed student home in a prime location.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/brailsford.jpg" alt="Brailsford" loading="lazy">
+        <div><h3>Brailsford</h3><p>A comfortable six-bed student home across three floors, with good light and generous shared space.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/nangreave.jpg" alt="Nangreave" loading="lazy">
+        <div><h3>Nangreave</h3><p>Our first auction purchase. Now a bright six-bed professional house share in Stockport with a big communal kitchen.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/hawes.jpg" alt="Hawes" loading="lazy">
+        <div><h3>Hawes</h3><p>One of our most popular homes. Second and third-year students love the location.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/norwood.jpg" alt="Norwood" loading="lazy">
+        <div><h3>Norwood</h3><p>A well-planned six-bed home that makes the most of every room.</p></div>
+      </div>
+      <div class="card">
+        <img src="images/braemar.jpg" alt="Braemar" loading="lazy">
+        <div><h3>Braemar</h3><p>A spacious six-bed shared home with a modern kitchen and living area.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="selling">
+  <div class="wrap">
+  <div class="feature">
+    <div class="img"><img src="images/keys-paperwork.jpg" alt="House keys and sale paperwork" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">Who we buy from</span>
+      <p>Most of the homes we buy come from landlords who are ready to step back. Some want a straightforward sale without paying an agent. Others have a portfolio and want to sell it in a way that works around their lending and each specific property in their portfolio.</p>
+      <p>We're currently working with one portfolio landlord to buy six of his properties, structured around what works for him rather than a standard sale. One of the key things we structured was to avoid early repayment charges on his mortgage, which would unnecessarily eat into his profits. The transaction works equally well, if not better, structured this way for both parties.</p>
+    </div>
+  </div>
+  <div class="feature flip">
+    <div class="img"><img src="images/braemar-bedroom.jpg" alt="A bedroom at one of our portfolio properties" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">What to expect</span>
+      <h2>It's rarely just about the money</h2>
+      <p>When someone sells a property there's usually more to it than the price: time frames, amounts, what happens next. I find out exactly what you need from the sale and structure the purchase around it.</p>
+      <p>One recent seller's priority was that her friend, who was already living there, could keep renting the house. Once that was clear, we structured a deal that delivered that outcome and worked commercially for both sides.</p>
+      <p>The best deals are the ones where you take the time to find out what's driving the decision. It's surprising, but it isn't always money that drives decisions in property transactions.</p>
+      <p>I love a win-win deal where everyone is happy with the result. In this case, all three parties were happy: the tenant, the vendor, and me as the buyer and now the landlord.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="wrap">
+    <span class="eyebrow">Portfolio landlords</span>
+    <h2>Thinking about selling your rental property or your portfolio?</h2>
+    <p style="max-width:720px">We're portfolio landlords ourselves, so we know the headaches: leaking roofs, fire alarms going off, boilers breaking. At some point the hassle stops being worth it, and the idea of money in the bank and a quieter life starts to look very appealing.</p>
+    <div class="points">
+      <div><img src="images/buying-in-stages.jpg" alt="" loading="lazy"><h3>Buying in stages</h3>Purchases can be staggered over time in a way that suits you. We can time completion so that it works with when your fixed rate loans expire.</div>
+      <div><img src="images/structured.jpg" alt="" loading="lazy" style="filter:sepia(.3) saturate(.5) brightness(.85) contrast(1.05)"><h3>Structured around you</h3>Not every sale needs to be one transaction on one date. We'll explore the different ways we could buy your property and talk you through each option, so we find the best way forward for you.</div>
+      <div><img src="images/experienced-team.jpg" alt="" loading="lazy"><h3>An experienced team</h3>We work with solicitors and mortgage brokers who are experienced in both buying and selling portfolios.</div>
+    </div>
+    <p style="max-width:720px">If that sounds familiar, we'd love to speak to you, even if it's just to have a grumble about being a landlord at the moment.</p>
+    <a class="btn ghost" href="#contact" style="margin-top:26px">Start a conversation</a>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap process">
+    <img src="images/keys-boxes.jpg" alt="House keys in a door with moving boxes behind" loading="lazy">
+    <div>
+    <span class="eyebrow">How it works</span>
+    <h2>Our process</h2>
+    <div class="steps">
+      <div><h3>Start the conversation</h3>Get in touch about a property, or a portfolio, you're thinking of selling.</div>
+      <div><h3>Understand your situation</h3>We take the time to understand the property, the numbers and what you want to achieve.</div>
+      <div><h3>Look at the options</h3>We look at the different ways we could buy, so the sale works for you.</div>
+      <div><h3>You decide</h3>Whether that means us buying your property or portfolio, or just discussing your options together, the decision is yours.</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <span class="eyebrow">Testimonials</span>
+    <h2>From people we've worked with</h2>
+    <div class="tgrid">
+      <blockquote>&ldquo;Anna has given me amazing service over the years and I wouldn't hesitate to recommend her and M.C.P&hellip;&rdquo;<cite>Lewis Baker</cite></blockquote>
+      <blockquote>&ldquo;I reached out on the recommendation of a friend and I'm so happy I did. Easiest decision I've ever made and have already recommended M.C.P to other family members.&rdquo;<cite>Wendy Dixon</cite></blockquote>
+      <blockquote>&ldquo;We have completed! Just to say I really do appreciate how understanding you have been about my circumstances. People like you are rare but make a huge difference because you care.&rdquo;<cite>Tameside landlord</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Thinking of selling?</h2>
+    <p>We work with landlords across Greater Manchester and the North West. Tell us a little about the properties you own, what you're hoping to achieve and roughly when, and we'll come back to you and let you know how we can help.</p>
+    <a class="btn" href="https://links.morgancurtisproperties.com/widget/form/my4DPl6ipDJ6zLCACxYl" target="_blank" rel="noopener">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>
+      <strong style="color:#fff">Morgan Curtis Properties Ltd</strong><br>
+      Registered in England and Wales. Company no. 10774891.
+    </div>
+    <div class="social">
+      <a href="https://www.linkedin.com/company/morgan-curtis-properties/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/morgancurtisproperties/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/MorganCProperties/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
